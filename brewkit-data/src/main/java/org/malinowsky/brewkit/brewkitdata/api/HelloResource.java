@@ -1,4 +1,4 @@
-package org.malinowsky.brewkit.brewkitdata;
+package org.malinowsky.brewkit.brewkitdata.api;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
