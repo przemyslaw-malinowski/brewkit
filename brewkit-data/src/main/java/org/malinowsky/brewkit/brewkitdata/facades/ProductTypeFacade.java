@@ -9,5 +9,6 @@ import java.util.List;
 @Remote
 public interface ProductTypeFacade {
     List<ProductTypeEntity> getAll();
+    ProductTypeEntity get(String code);
     void add(ProductType productType);
 }

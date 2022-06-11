@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Data
 public class ProductType implements Serializable {
-    private Integer id;
     private String code;
     private String name;
+    private Integer userId;
 }

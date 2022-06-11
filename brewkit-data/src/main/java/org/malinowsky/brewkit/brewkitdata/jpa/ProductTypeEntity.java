@@ -1,8 +1,6 @@
 package org.malinowsky.brewkit.brewkitdata.jpa;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -10,16 +8,16 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "product_type")
-public class ProductTypeEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Integer id;
+public class ProductTypeEntity extends AbstractEntity {
+    @Column(name = "code", length = 50)
+    private String code;
+
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "user_id")
     private Integer userId;
-
-    @Column(name = "version", nullable = false)
-    private Integer version;
 }
