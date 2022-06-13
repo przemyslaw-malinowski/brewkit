@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Getter
 @Setter
@@ -14,8 +15,11 @@ public class RecipeEntity extends AbstractEntity {
     private String name;
 
     @ManyToOne
-    private AlcoholGeneralSubtypeEntity entity;
+    private AlcoholSubtypeEntity entity;
 
-    @OneToOne
-    private ProductsMeasuresEntity products;
+    @OneToMany(mappedBy = "recipe")
+    private Collection<StepsEntity> steps;
+
+    @OneToMany(mappedBy = "recipe")
+    private Collection<IngredientsEntity> ingredients;
 }

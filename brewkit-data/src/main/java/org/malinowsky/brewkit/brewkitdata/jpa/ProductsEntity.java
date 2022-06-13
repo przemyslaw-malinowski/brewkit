@@ -11,14 +11,13 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "alcohol_general_subtype")
-public class AlcoholGeneralSubtypeEntity extends AbstractEntity{
+@Table(name = "products")
+public class ProductsEntity extends AbstractEntity {
     @Column(name = "name", length = 50, nullable = false, unique = true)
     private String name;
 
-    @Column(name = "code", length = 50, nullable = false, unique = true)
-    private String code;
-
     @ManyToOne
-    private AlcoholGeneralSubtypeEntity alcoholGeneralSubtypeEntity;
+    private ProductTypeEntity entity;
 }
+
+

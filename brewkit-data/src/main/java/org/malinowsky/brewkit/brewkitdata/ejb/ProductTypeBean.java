@@ -22,7 +22,7 @@ public class ProductTypeBean implements ProductTypeFacade {
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Resource(lookup = "java:jboss/infinispan/cache/product-data/product-type")
+    @Resource(lookup = "java:jboss/infinispan/cache/product-data/product-types")
     private Cache<String, Object> productTypes;
 
     @Inject

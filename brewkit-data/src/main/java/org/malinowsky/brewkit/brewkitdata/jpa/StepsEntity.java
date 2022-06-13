@@ -3,19 +3,20 @@ package org.malinowsky.brewkit.brewkitdata.jpa;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
-@Table(name = "STEPS")
+@Table(name = "recipe_steps")
 public class StepsEntity extends AbstractEntity {
     @Column(name = "name", length = 50, nullable = false, unique = true)
     private String name;
 
+    @Column(name = "description", length = 5000, nullable = false)
+    private String description;
+
     @ManyToOne
-    private ProductTypeEntity entity;
+    @JoinColumn(name = "recipe_id")
+    private RecipeEntity recipe;
 }

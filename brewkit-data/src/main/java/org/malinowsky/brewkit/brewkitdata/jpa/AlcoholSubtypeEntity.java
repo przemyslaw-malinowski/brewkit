@@ -6,16 +6,19 @@ import lombok.Setter;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-@Entity
 @Getter
 @Setter
-public class ProductEntity extends AbstractEntity {
+@Entity
+@Table(name = "alcohol_general_subtype")
+public class AlcoholSubtypeEntity extends AbstractEntity{
     @Column(name = "name", length = 50, nullable = false, unique = true)
     private String name;
 
+    @Column(name = "code", length = 50, nullable = false, unique = true)
+    private String code;
+
     @ManyToOne
-    private ProductTypeEntity entity;
+    private AlcoholGeneralTypeEntity alcoholGeneralType;
 }
-
-
